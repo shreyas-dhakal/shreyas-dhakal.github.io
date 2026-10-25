@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Doclify coming soon. Please enjoy a cat for now.">
+    <meta name="description" content="Doclify coming soon.">
     <title>Doclify coming soon</title>
     <style>
       body {
@@ -14,27 +14,51 @@
         background: #f6f5f2;
         color: #252525;
         font-family: system-ui, sans-serif;
-        text-align: center;
       }
 
-      main {
-        width: min(100% - 2rem, 420px);
-        padding: 3rem 0;
+      h1 {
+        position: relative;
+        width: 12ch;
+        height: 12ch;
+        margin: 0;
+        font-size: clamp(1rem, 4vw, 1.75rem);
+        font-weight: 600;
+        text-transform: uppercase;
+        animation: spin 10s linear infinite;
       }
 
-      h1 { margin: 0 0 0.5rem; font-size: clamp(2rem, 7vw, 3rem); }
-      p { margin: 0 0 2rem; color: #626262; }
-      img { display: block; width: 100%; height: auto; border-radius: 8px; }
-      small { display: block; margin-top: 0.75rem; color: #777; }
-      a { color: inherit; }
+      h1 span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(calc(360deg / var(--total) * var(--index))) translateY(-5ch);
+      }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+      }
+
+      @keyframes spin { to { rotate: 360deg; } }
+      @media (prefers-reduced-motion: reduce) { h1 { animation: none; } }
     </style>
   </head>
   <body>
-    <main>
-      <h1>Doclify coming soon</h1>
-      <p>Please enjoy this cat for now.</p>
-      <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" width="480" height="480" alt="A black cat typing furiously on a laptop">
-      <small>GIF via <a href="https://giphy.com/gifs/JIX9t2j0ZTN9S">GIPHY</a>.</small>
-    </main>
+    <h1><span class="sr-only">Doclify coming soon</span></h1>
+    <script>
+      const h1 = document.querySelector("h1");
+      const letters = [..."Doclify • coming soon • "];
+      h1.style.setProperty("--total", letters.length);
+      letters.forEach((letter, i) => {
+        const span = document.createElement("span");
+        span.ariaHidden = "true";
+        span.textContent = letter;
+        span.style.setProperty("--index", i);
+        h1.append(span);
+      });
+    </script>
   </body>
 </html>
