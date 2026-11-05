@@ -1,0 +1,88 @@
+[
+  {
+    "name": "desktop",
+    "overflow": false,
+    "font": true,
+    "state": {
+      "bookPixels": "177755",
+      "bookDrawCalls": "23",
+      "bookTriangles": "3624",
+      "bookState": "ready"
+    },
+    "heading": "\"Geist Serif\", Georgia, \"Times New Roman\", serif",
+    "links": [
+      "https://github.com/shreyas-dhakal/doclify-harness",
+      "https://github.com/shreyas-dhakal/doclify-harness",
+      "https://github.com/shreyas-dhakal/doclify-harness"
+    ],
+    "firstFocus": "Skip to content",
+    "githubFocus": "Doclify on GitHub",
+    "reduced": {
+      "matches": true,
+      "animation": "none"
+    },
+    "contextLoss": {
+      "ready": false,
+      "fallback": "visible"
+    },
+    "errors": []
+  },
+  {
+    "name": "desktop-1100",
+    "overflow": false,
+    "font": true,
+    "state": {
+      "bookPixels": "151313",
+      "bookDrawCalls": "23",
+      "bookTriangles": "3624",
+      "bookState": "ready"
+    },
+    "heading": "\"Geist Serif\", Georgia, \"Times New Roman\", serif",
+    "links": [
+      "https://github.com/shreyas-dhakal/doclify-harness",
+      "https://github.com/shreyas-dhakal/doclify-harness",
+      "https://github.com/shreyas-dhakal/doclify-harness"
+    ],
+    "errors": []
+  },
+  {
+    "name": "tablet",
+    "overflow": false,
+    "font": true,
+    "state": {
+      "bookPixels": "386960",
+      "bookDrawCalls": "23",
+      "bookTriangles": "3624",
+      "bookState": "ready"
+    },
+    "heading": "\"Geist Serif\", Georgia, \"Times New Roman\", serif",
+    "links": [
+      "https://github.com/shreyas-dhakal/doclify-harness",
+      "https://github.com/shreyas-dhakal/doclify-harness",
+      "https://github.com/shreyas-dhakal/doclify-harness"
+    ],
+    "errors": []
+  },
+  {
+    "name": "mobile",
+    "overflow": false,
+    "font": true,
+    "state": {
+      "bookPixels": "130221",
+      "bookDrawCalls": "23",
+      "bookTriangles": "3624",
+      "bookState": "ready"
+    },
+    "heading": "\"Geist Serif\", Georgia, \"Times New Roman\", serif",
+    "links": [
+      "https://github.com/shreyas-dhakal/doclify-harness",
+      "https://github.com/shreyas-dhakal/doclify-harness",
+      "https://github.com/shreyas-dhakal/doclify-harness"
+    ],
+    "errors": []
+  },
+  {
+    "noJS": true,
+    "headline": "Documentation for humans and agents, working together."
+  }
+]

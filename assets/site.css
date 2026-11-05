@@ -1,0 +1,81 @@
+@font-face{font-family:"Geist Serif";src:url("fonts/GeistSerif-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Geist";src:url("fonts/Geist-Variable.woff2") format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
+
+:root{
+  color-scheme:light;
+  --white:#FFFFFF;
+  --blue:#2274A5;
+  --amber:#FFBF00;
+  --pink:#E83F6F;
+  --blue-wash:rgb(34 116 165 / .08);
+  --gutter:clamp(16px,5vw,64px);
+  --max:1200px;
+  --serif:"Geist Serif",Georgia,"Times New Roman",serif;
+  --sans:"Geist",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{background:var(--white);-webkit-text-size-adjust:100%;scrollbar-color:var(--blue) var(--white)}
+body{margin:0;min-height:100svh;display:flex;flex-direction:column;background:var(--white);color:var(--blue);font:400 1.125rem/1.55 var(--sans);overflow-x:clip}
+::selection{background:var(--amber);color:var(--blue)}
+a{color:inherit;text-underline-offset:.2em;text-decoration-thickness:1px}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px;box-shadow:0 0 0 6px var(--amber);border-radius:4px}
+
+.skip{position:absolute;left:var(--gutter);top:-100px;padding:8px 14px;background:var(--blue);color:var(--white);border-radius:6px;z-index:10}
+.skip:focus{top:12px}
+
+.site-header,.hero,.close,.site-footer{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:var(--gutter)}
+.site-header{display:flex;align-items:center;justify-content:space-between;height:72px}
+.wordmark{font:400 1.375rem/1 var(--serif);text-decoration:none;letter-spacing:-.01em}
+.icon-link{display:grid;place-items:center;width:44px;height:44px;margin-right:-10px;border-radius:999px;transition:background-color .2s var(--ease)}
+.icon-link:hover{background:var(--blue-wash)}
+
+main{flex:1}
+.hero{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);align-items:center;gap:clamp(24px,4vw,56px);min-height:min(calc(100svh - 72px),820px);padding-block:clamp(32px,6vw,80px)}
+.hero-copy{position:relative;z-index:1}
+h1{margin:0 0 clamp(20px,2.4vw,32px);font:400 clamp(2.5rem,5.2vw,4.5rem)/1.02 var(--serif);letter-spacing:-.025em;text-wrap:balance}
+.annotate{position:relative;white-space:nowrap}
+.annotate-mark{position:absolute;left:-2%;bottom:-.14em;width:104%;height:.22em;overflow:visible;pointer-events:none}
+.annotate-mark path{fill:none;stroke:var(--pink);stroke-width:4;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.lede{margin:0 0 clamp(28px,3vw,40px);max-width:34ch;font-size:clamp(1.125rem,1.4vw,1.25rem);text-wrap:pretty}
+
+.cta{display:inline-flex;align-items:center;gap:12px;min-height:52px;padding:0 24px;border-radius:999px;border:1px solid var(--blue);background:var(--white);color:var(--blue);font-weight:600;font-size:1.0625rem;text-decoration:none;transition:background-color .2s var(--ease)}
+.cta::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--amber)}
+.cta:hover{background:var(--blue-wash)}
+
+/* Decorative book host: book-scene.js appends a canvas and adds .is-ready */
+.book-scene{position:relative;width:calc(100% + var(--gutter));aspect-ratio:4/3;margin-right:calc(var(--gutter) * -1)}
+.book-scene canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.book-fallback{position:absolute;inset:0;width:100%;height:100%;transition:opacity .4s var(--ease)}
+.book-scene.is-ready .book-fallback{opacity:0;visibility:hidden}
+.book-fallback .leaf{fill:var(--white);stroke:var(--blue);stroke-width:2;stroke-linejoin:round}
+.book-fallback .lift{fill:var(--white);filter:drop-shadow(0 10px 14px rgb(34 116 165 / .16))}
+.book-fallback .edge{fill:var(--amber)}
+.book-fallback .spine{stroke:var(--blue);stroke-width:2}
+.book-fallback .lines path{fill:none;stroke:var(--blue);stroke-width:2;stroke-linecap:round;opacity:.3}
+.book-fallback .threads path{fill:none;stroke:var(--blue);stroke-width:2;stroke-linecap:round}
+.book-fallback .nodes circle{fill:var(--pink)}
+.book-fallback .ribbon{fill:var(--amber)}
+
+.close{padding-block:clamp(56px,9vw,128px);text-align:center}
+.close::before{content:"";display:block;width:80px;height:2px;margin:0 auto clamp(28px,3vw,40px);background:var(--blue)}
+.close p{margin:0 auto;max-width:22ch;font:400 clamp(1.75rem,3.4vw,2.75rem)/1.15 var(--serif);letter-spacing:-.02em;text-wrap:balance}
+
+.site-footer{display:flex;justify-content:space-between;align-items:center;min-height:64px;font-size:.875rem;border-top:1px solid var(--blue-wash)}
+.site-footer a{padding:12px 0}
+
+@media (max-width:1023px){
+  .hero{grid-template-columns:minmax(0,1fr);min-height:0}
+  h1{font-size:clamp(2.5rem,6vw,5.25rem)}
+  .book-scene{width:100%;margin-right:0;aspect-ratio:auto;height:clamp(300px,56svh,560px)}
+}
+@media (max-width:639px){
+  h1{font-size:2.5rem;line-height:1.05}
+  .book-scene{height:clamp(260px,44svh,400px)}
+  .annotate{white-space:normal}
+}
+@media (prefers-reduced-motion:no-preference){
+  .annotate-mark{transform-origin:left center;animation:draw 1.1s .35s var(--ease) both}
+  @keyframes draw{from{transform:scaleX(0)}}
+}

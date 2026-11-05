@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "geist": "^1.9.1",
+    "three": "0.187.0"
+  }
+}
