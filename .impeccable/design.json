@@ -1,180 +1,208 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-05T01:29:28.490570Z",
+  "generatedAt": "2026-11-05T01:42:36.278524Z",
   "title": "Design System: Doclify",
   "extensions": {
     "colorMeta": {
       "blue": {
         "role": "primary",
-        "displayName": "Blue ink"
+        "displayName": "Opening blue"
       },
       "amber": {
         "role": "secondary",
-        "displayName": "Amber accent"
+        "displayName": "Agent amber"
       },
       "pink": {
         "role": "tertiary",
-        "displayName": "Pink annotation"
+        "displayName": "Human pink"
       },
       "white": {
         "role": "neutral",
-        "displayName": "White paper"
+        "displayName": "Paper white"
       }
     },
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "Editorial hero headline; regular serif only."
+        "purpose": "Display role from the current CSS."
       },
-      "body": {
-        "displayName": "Body",
-        "purpose": "Supporting text in variable Geist sans."
+      "section": {
+        "displayName": "Section",
+        "purpose": "Section role from the current CSS."
       },
-      "lede": {
-        "displayName": "Lede",
-        "purpose": "Compact explanatory paragraph."
+      "spread-heading": {
+        "displayName": "Spread heading",
+        "purpose": "Spread heading role from the current CSS."
       },
       "wordmark": {
         "displayName": "Wordmark",
-        "purpose": "Doclify home link."
+        "purpose": "Wordmark role from the current CSS."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Body role from the current CSS."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "Lede role from the current CSS."
+      },
+      "intro": {
+        "displayName": "Intro",
+        "purpose": "Intro role from the current CSS."
       },
       "action": {
         "displayName": "Action",
-        "purpose": "Primary repository action."
+        "purpose": "Action role from the current CSS."
       },
-      "closing": {
-        "displayName": "Closing",
-        "purpose": "Short closing statement."
+      "strip": {
+        "displayName": "Strip",
+        "purpose": "Strip role from the current CSS."
       },
-      "footer": {
-        "displayName": "Footer",
-        "purpose": "Small footer text."
+      "idea-copy": {
+        "displayName": "Idea copy",
+        "purpose": "Idea copy role from the current CSS."
+      },
+      "spread-copy": {
+        "displayName": "Spread copy",
+        "purpose": "Spread copy role from the current CSS."
+      },
+      "spread-end": {
+        "displayName": "Spread end",
+        "purpose": "Spread end role from the current CSS."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Caption role from the current CSS."
       }
     },
-    "shadows": [
-      {
-        "name": "lifted-leaf",
-        "value": "0 10px 14px rgb(34 116 165 / .16)",
-        "purpose": "SVG lifted-leaf drop-shadow filter."
-      },
-      {
-        "name": "keyboard-halo",
-        "value": "0 0 0 6px var(--amber)",
-        "purpose": "Focus box-shadow accompanying the blue outline."
-      }
-    ],
+    "shadows": [],
     "motion": [
       {
-        "name": "ease",
-        "value": "cubic-bezier(.16,1,.3,1)",
-        "purpose": "Shared CSS easing."
+        "name": "action-color",
+        "value": "background .2s, color .2s",
+        "purpose": "CTA hover transition using default CSS ease."
       },
       {
-        "name": "hover",
-        "value": ".2s",
-        "purpose": "CTA and icon background-color transition."
-      },
-      {
-        "name": "fallback",
-        "value": ".4s",
-        "purpose": "Declared fallback opacity transition; ready state also sets visibility hidden."
-      },
-      {
-        "name": "annotation-draw",
-        "value": "1.1s .35s",
-        "purpose": "Duration and delay of underline scale animation, only without reduced-motion preference."
+        "name": "action-arrow",
+        "value": "transform .2s",
+        "purpose": "Arrow moves 4px on hover; transitions disabled for reduced motion."
       }
     ],
     "breakpoints": [
       {
-        "name": "stack-max",
-        "value": "1023px"
+        "name": "wide-min",
+        "value": "1600px"
+      },
+      {
+        "name": "book-offset-range-min",
+        "value": "1051px"
+      },
+      {
+        "name": "book-offset-range-max",
+        "value": "1200px"
+      },
+      {
+        "name": "tablet-max",
+        "value": "1050px"
       },
       {
         "name": "mobile-max",
-        "value": "639px"
+        "value": "700px"
       }
     ]
   },
   "components": [
     {
-      "name": "Primary GitHub action",
+      "name": "White GitHub action",
       "kind": "button",
-      "refersTo": "button-primary",
-      "description": "White outlined anchor with blue ink and an amber dot.",
-      "html": "<a class=\"ds-cta\" href=\"https://github.com/shreyas-dhakal/doclify-harness\">Explore on GitHub</a>",
-      "css": ".ds-cta{display:inline-flex;align-items:center;gap:12px;min-height:52px;padding:0 24px;border-radius:999px;border:1px solid var(--blue);background:var(--white);color:var(--blue);font-weight:600;font-size:1.0625rem;text-decoration:none;transition:background-color .2s var(--ease)}\n.ds-cta::after{content:\"\";width:8px;height:8px;border-radius:50%;background:var(--amber)}\n.ds-cta:hover{background:var(--blue-wash)}\n.ds-cta{font-family:var(--sans);line-height:1.55}.ds-cta:focus-visible{outline:2px solid var(--blue);outline-offset:3px;box-shadow:0 0 0 6px var(--amber);border-radius:4px}"
+      "refersTo": "button-white",
+      "description": "White GitHub action extracted from the implemented landing page.",
+      "html": "<div class=\"ds-preview\"><a class=\"ds-cta ds-cta-white\" href=\"https://github.com/shreyas-dhakal/doclify-harness\">Explore on GitHub <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></a></div>",
+      "css": ".ds-preview{font:400 18px/1.55 var(--sans);background:var(--blue);color:var(--white)}.ds-preview :where(a){color:inherit;text-underline-offset:5px}.ds-preview svg{display:block}.ds-preview :where(a):focus-visible{outline:3px solid currentColor;outline-offset:7px}\n.ds-cta{display:inline-flex;justify-content:space-between;align-items:center;gap:28px;min-height:58px;padding:15px 23px;text-decoration:none;font-size:16px;font-weight:600;border:1px solid transparent;border-radius:5px;transition:background .2s,color .2s}\n.ds-cta svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.6;transition:transform .2s}\n.ds-cta:hover svg{transform:translateX(4px)}\n.ds-cta-white{background:var(--white);color:var(--blue)}\n.ds-cta-white:hover{background:var(--blue);color:var(--white);border-color:var(--white)}\n@media(max-width:700px){.ds-cta{min-height:56px}}\n.ds-cta-white:focus-visible{outline-color:var(--white)}\n@media(prefers-reduced-motion:reduce){.ds-preview *,.ds-preview *::before,.ds-preview *::after{transition:none!important}}"
+    },
+    {
+      "name": "Blue GitHub action",
+      "kind": "button",
+      "refersTo": "button-blue",
+      "description": "Blue GitHub action extracted from the implemented landing page.",
+      "html": "<div class=\"ds-preview\"><a class=\"ds-cta ds-cta-blue\" href=\"https://github.com/shreyas-dhakal/doclify-harness\">Meet Doclify <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></a></div>",
+      "css": ".ds-preview{font:400 18px/1.55 var(--sans);background:var(--white);color:var(--blue)}.ds-preview :where(a){color:inherit;text-underline-offset:5px}.ds-preview svg{display:block}.ds-preview :where(a):focus-visible{outline:3px solid currentColor;outline-offset:7px}\n.ds-cta{display:inline-flex;justify-content:space-between;align-items:center;gap:28px;min-height:58px;padding:15px 23px;text-decoration:none;font-size:16px;font-weight:600;border:1px solid transparent;border-radius:5px;transition:background .2s,color .2s}\n.ds-cta svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.6;transition:transform .2s}\n.ds-cta:hover svg{transform:translateX(4px)}\n.ds-cta-blue{background:var(--blue);color:var(--white)}\n.ds-cta-blue:hover{background:var(--white);color:var(--blue);border-color:var(--blue)}\n@media(max-width:700px){.ds-cta{min-height:56px}}\n.ds-cta-blue:focus-visible{outline-color:var(--blue)}\n@media(prefers-reduced-motion:reduce){.ds-preview *,.ds-preview *::before,.ds-preview *::after{transition:none!important}}"
     },
     {
       "name": "Header navigation",
       "kind": "nav",
       "refersTo": "navigation",
-      "description": "Serif home link and accessible GitHub icon.",
-      "html": "<header class=\"ds-site-header\">\n  <a class=\"ds-wordmark\" href=\"./\" aria-label=\"Doclify home\">Doclify</a>\n  <a class=\"ds-icon-link\" href=\"https://github.com/shreyas-dhakal/doclify-harness\" aria-label=\"Doclify on GitHub\">\n    <svg viewBox=\"0 0 16 16\" width=\"24\" height=\"24\" aria-hidden=\"true\" focusable=\"false\"><path fill=\"currentColor\" d=\"M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z\"/></svg>\n  </a>\n</header>",
-      "css": ".ds-site-header{display:flex;align-items:center;justify-content:space-between;height:72px}\n.ds-wordmark{font:400 1.375rem/1 var(--serif);text-decoration:none;letter-spacing:-.01em}\n.ds-icon-link{display:grid;place-items:center;width:44px;height:44px;margin-right:-10px;border-radius:999px;transition:background-color .2s var(--ease)}\n.ds-icon-link:hover{background:var(--blue-wash)}\n.ds-site-header{color:var(--blue);font:400 1.125rem/1.55 var(--sans);}.ds-site-header a{color:inherit}.ds-site-header a:focus-visible{outline:2px solid var(--blue);outline-offset:3px;box-shadow:0 0 0 6px var(--amber);border-radius:4px}"
+      "description": "Header navigation extracted from the implemented landing page.",
+      "html": "<div class=\"ds-preview\"><header class=\"ds-site-header ds-wrap\">\n <a class=\"ds-wordmark\" href=\"./\" aria-label=\"Doclify home\">doclify<span aria-hidden=\"true\">.</span></a>\n <nav aria-label=\"Main navigation\"><a class=\"ds-about-link\" href=\"#idea\">The idea</a><a class=\"ds-github-link\" href=\"https://github.com/shreyas-dhakal/doclify-harness\" aria-label=\"Doclify on GitHub\">    <svg viewBox=\"0 0 16 16\" width=\"24\" height=\"24\" aria-hidden=\"true\" focusable=\"false\"><path fill=\"currentColor\" d=\"M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z\"/></svg><span>GitHub</span></a></nav>\n</header></div>",
+      "css": ".ds-preview{font:400 18px/1.55 var(--sans);background:var(--blue);color:var(--white)}.ds-preview :where(a){color:inherit;text-underline-offset:5px}.ds-preview svg{display:block}.ds-preview :where(a):focus-visible{outline:3px solid currentColor;outline-offset:7px}\n.ds-wrap{max-width:1440px;margin-inline:auto;padding-inline:var(--gutter)}\n.ds-site-header{height:112px;display:flex;justify-content:space-between;align-items:center}\n.ds-wordmark{font:400 38px/1 var(--serif);letter-spacing:-.03em;text-decoration:none}\n.ds-wordmark span{color:var(--amber)}\n.ds-preview nav{display:flex;align-items:center;gap:40px}\n.ds-preview nav a{text-decoration:none;font-size:15px}\n.ds-about-link{padding:12px 0}\n.ds-about-link:hover{text-decoration:underline}\n.ds-github-link{display:flex;align-items:center;gap:12px;border:1px solid rgb(255 255 255 / .5);padding:12px 18px;border-radius:6px;min-height:48px}\n.ds-github-link:hover{background:var(--white);color:var(--blue)}\n@media(max-width:1050px){.ds-site-header{height:92px}}\n@media(max-width:700px){.ds-site-header{height:88px}\n.ds-wordmark{font-size:32px}\n.ds-preview nav{gap:20px}\n.ds-about-link{display:none}\n.ds-github-link{padding:10px 12px}}\n@media(prefers-reduced-motion:reduce){.ds-preview *,.ds-preview *::before,.ds-preview *::after{transition:none!important}}"
     },
     {
-      "name": "Headline annotation",
+      "name": "Chapter strip",
       "kind": "custom",
-      "refersTo": "annotation",
-      "description": "Decorative pink underline for the collaborative phrase.",
-      "html": "<span class=\"ds-annotate\">working together.<svg class=\"ds-annotate-mark\" viewBox=\"0 0 300 16\" preserveAspectRatio=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M3 11 C 70 4, 150 14, 297 6\"/></svg></span>",
-      "css": ".ds-annotate{position:relative;white-space:nowrap}\n.ds-annotate-mark{position:absolute;left:-2%;bottom:-.14em;width:104%;height:.22em;overflow:visible;pointer-events:none}\n.ds-annotate-mark path{fill:none;stroke:var(--pink);stroke-width:4;stroke-linecap:round;vector-effect:non-scaling-stroke}\n.ds-annotate{white-space:normal}\n.ds-annotate-mark{transform-origin:left center;animation:draw 1.1s .35s var(--ease) both}\n.ds-annotate{color:var(--blue);font:400 clamp(2.5rem,5.2vw,4.5rem)/1.02 var(--serif);letter-spacing:-.025em}@media(max-width:639px){.ds-annotate{white-space:normal}}@media(prefers-reduced-motion:no-preference){.ds-annotate-mark{transform-origin:left center;animation:ds-draw 1.1s .35s var(--ease) both}@keyframes ds-draw{from{transform:scaleX(0)}}}"
+      "refersTo": "chapter-strip",
+      "description": "Chapter strip extracted from the implemented landing page.",
+      "html": "<div class=\"ds-preview\"><div class=\"ds-chapter-strip\" aria-hidden=\"true\"><span>Ideas worth sharing.</span><svg viewBox=\"0 0 32 32\"><path d=\"M16 2v28M2 16h28M6 6l20 20M6 26 26 6\"/></svg><span>Context worth keeping.</span><svg viewBox=\"0 0 32 32\"><path d=\"M16 2v28M2 16h28M6 6l20 20M6 26 26 6\"/></svg><span>Work worth doing together.</span></div></div>",
+      "css": ".ds-preview{font:400 18px/1.55 var(--sans);background:var(--white);color:var(--blue)}.ds-preview :where(a){color:inherit;text-underline-offset:5px}.ds-preview svg{display:block}.ds-preview :where(a):focus-visible{outline:3px solid currentColor;outline-offset:7px}\n.ds-chapter-strip{background:var(--pink);color:var(--white);display:flex;align-items:center;justify-content:center;gap:clamp(18px,3vw,48px);padding:25px var(--gutter);font:400 clamp(24px,2.2vw,31px)/1.2 var(--serif)}\n.ds-chapter-strip svg{flex:none;width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.5}\n.ds-chapter-strip span{white-space:nowrap}\n@media(max-width:1050px){.ds-chapter-strip{gap:18px;font-size:24px}\n.ds-chapter-strip span:last-child,.ds-chapter-strip svg:last-of-type{display:none}}\n@media(max-width:700px){.ds-chapter-strip{justify-content:space-between;padding-block:22px;gap:15px;font-size:24px}\n.ds-chapter-strip span:nth-of-type(2){display:none}\n.ds-chapter-strip svg:first-of-type{width:24px}}\n@media(max-width:700px){.ds-chapter-strip{justify-content:center}\n.ds-chapter-strip svg{display:none}}\n@media(prefers-reduced-motion:reduce){.ds-preview *,.ds-preview *::before,.ds-preview *::after{transition:none!important}}"
     },
     {
-      "name": "Closing statement",
+      "name": "Human and agent spreads",
       "kind": "custom",
-      "refersTo": "closing",
-      "description": "Short serif statement with a blue rule.",
-      "html": "<section class=\"ds-close\" aria-label=\"Closing\">\n    <p>On the same page.</p>\n  </section>",
-      "css": ".ds-close{padding-block:clamp(56px,9vw,128px);text-align:center}\n.ds-close::before{content:\"\";display:block;width:80px;height:2px;margin:0 auto clamp(28px,3vw,40px);background:var(--blue)}\n.ds-close p{margin:0 auto;max-width:22ch;font:400 clamp(1.75rem,3.4vw,2.75rem)/1.15 var(--serif);letter-spacing:-.02em;text-wrap:balance}\n.ds-close{color:var(--blue)}"
+      "refersTo": "spread-human",
+      "description": "Human and agent spreads extracted from the implemented landing page.",
+      "html": "<div class=\"ds-preview\"><section class=\"ds-spread\" aria-label=\"A shared approach to documentation\">\n <article class=\"ds-spread-human\"><div class=\"ds-spread-inner\"><svg class=\"ds-chapter-icon\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><circle cx=\"32\" cy=\"20\" r=\"11\"/><path d=\"M10 57c0-15 10-22 22-22s22 7 22 22\"/></svg><h2>For the<br>human in the loop.</h2><p>The thinking behind the work.<br>The decisions. The questions.<br>The things worth knowing.</p><span class=\"ds-spread-end\">Bring your perspective.</span></div></article>\n <article class=\"ds-spread-agent\"><div class=\"ds-spread-inner\"><svg class=\"ds-chapter-icon\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><path d=\"M32 5v54M5 32h54M13 13l38 38M13 51l38-38\"/><circle cx=\"32\" cy=\"32\" r=\"17\"/></svg><h2>For the<br>agent on the team.</h2><p>The context behind the task.<br>The intent. The constraints.<br>The bigger picture.</p><span class=\"ds-spread-end\">Work from shared understanding.</span></div></article>\n</section></div>",
+      "css": ".ds-preview{font:400 18px/1.55 var(--sans);background:var(--white);color:var(--blue)}.ds-preview :where(a){color:inherit;text-underline-offset:5px}.ds-preview svg{display:block}.ds-preview :where(a):focus-visible{outline:3px solid currentColor;outline-offset:7px}\n.ds-spread{display:grid;grid-template-columns:1fr 1fr}\n.ds-spread-human{background:var(--pink);color:var(--white)}\n.ds-spread-agent{background:var(--amber);color:var(--blue)}\n.ds-spread-inner{max-width:720px;margin-left:auto;padding:62px var(--gutter) 48px}\n.ds-spread-agent .ds-spread-inner{margin-left:0;margin-right:auto}\n.ds-chapter-icon{height:50px;width:50px;fill:none;stroke:currentColor;stroke-width:1.8;margin-bottom:35px}\n.ds-spread h2{font:400 clamp(38px,4.1vw,58px)/1.05 var(--serif);letter-spacing:-.025em;margin:0 0 28px}\n.ds-spread p{font-size:24px;line-height:1.5;margin:0 0 40px}\n.ds-spread-end{display:block;border-top:1px solid currentColor;padding-top:20px;font-size:20px;font-weight:700;line-height:1.4}\n@media(max-width:1050px){.ds-spread-inner{padding-block:48px}\n.ds-spread p{font-size:24px}}\n@media(max-width:700px){.ds-spread{grid-template-columns:1fr}\n.ds-spread-inner{padding:42px var(--gutter)}\n.ds-chapter-icon{margin-bottom:25px}\n.ds-spread h2{font-size:44px}\n.ds-spread p{font-size:24px}\n.ds-spread-end{font-size:20px}}\n@media(max-width:1050px){.ds-spread{grid-template-columns:1fr}\n.ds-spread-inner{max-width:none;margin-inline:0}\n.ds-spread-agent .ds-spread-inner{margin-inline:0}}\n@media(prefers-reduced-motion:reduce){.ds-preview *,.ds-preview *::before,.ds-preview *::after{transition:none!important}}"
     },
     {
-      "name": "Skip to content",
-      "kind": "button",
-      "refersTo": "skip-link",
-      "description": "Keyboard-only route to the main landmark; target supplied by the host page.",
-      "html": "<a class=\"ds-skip\" href=\"#main\">Skip to content</a>",
-      "css": ".ds-skip{position:absolute;left:var(--gutter);top:-100px;padding:8px 14px;background:var(--blue);color:var(--white);border-radius:6px;z-index:10}\n.ds-skip:focus{top:12px}\n.ds-skip{font:400 1.125rem/1.55 var(--sans)}.ds-skip:focus-visible{outline:2px solid var(--blue);outline-offset:3px;box-shadow:0 0 0 6px var(--amber);border-radius:4px}"
+      "name": "Static book fallback",
+      "kind": "custom",
+      "refersTo": "book",
+      "description": "Static book fallback extracted from the implemented landing page.",
+      "html": "<div class=\"ds-preview\"><div id=\"book-scene\" class=\"ds-book-scene\" aria-hidden=\"true\">      <svg class=\"ds-book-fallback\" viewBox=\"0 0 640 480\" focusable=\"false\">\n        <g class=\"ds-pages\">\n          <path class=\"ds-edge\" d=\"M320 392 C 250 360, 140 360, 64 384 L 64 400 C 140 376, 250 376, 320 408 C 390 376, 500 376, 576 400 L 576 384 C 500 360, 390 360, 320 392 Z\"/>\n          <path class=\"ds-leaf\" d=\"M320 120 C 250 92, 150 92, 76 116 L 64 384 C 140 360, 250 360, 320 392 Z\"/>\n          <path class=\"ds-leaf\" d=\"M320 120 C 390 92, 490 92, 564 116 L 576 384 C 500 360, 390 360, 320 392 Z\"/>\n          <path class=\"ds-leaf ds-lift\" d=\"M320 120 C 400 70, 470 62, 520 76 L 548 340 C 470 330, 390 352, 320 392 Z\"/>\n          <path class=\"ds-spine\" d=\"M320 120 L 320 392\"/>\n          <g class=\"ds-lines\">\n            <path d=\"M112 156 C 170 144, 240 146, 290 160\"/>\n            <path d=\"M108 190 C 170 178, 240 180, 290 194\"/>\n            <path d=\"M104 224 C 170 212, 240 214, 290 228\"/>\n            <path d=\"M100 258 C 150 248, 200 248, 240 256\"/>\n            <path d=\"M366 156 C 410 130, 460 118, 500 118\"/>\n            <path d=\"M368 190 C 412 166, 462 154, 504 154\"/>\n            <path d=\"M370 224 C 414 202, 462 190, 508 190\"/>\n          </g>\n        </g>\n        <g class=\"ds-threads\">\n          <path d=\"M180 214 C 250 140, 380 140, 452 200\"/>\n          <path d=\"M150 268 C 260 220, 360 300, 470 262\"/>\n          <path d=\"M196 318 C 270 370, 380 360, 440 318\"/>\n        </g>\n        <g class=\"ds-nodes\">\n          <circle cx=\"180\" cy=\"214\" r=\"6\"/><circle cx=\"452\" cy=\"200\" r=\"6\"/>\n          <circle cx=\"150\" cy=\"268\" r=\"6\"/><circle cx=\"470\" cy=\"262\" r=\"6\"/>\n          <circle cx=\"196\" cy=\"318\" r=\"6\"/><circle cx=\"440\" cy=\"318\" r=\"6\"/>\n        </g>\n        <path class=\"ds-ribbon\" d=\"M332 120 L 332 430 L 342 418 L 352 430 L 352 112\"/>\n      </svg></div></div>",
+      "css": ".ds-preview{font:400 18px/1.55 var(--sans);background:var(--blue);color:var(--white)}.ds-preview :where(a){color:inherit;text-underline-offset:5px}.ds-preview svg{display:block}.ds-preview :where(a):focus-visible{outline:3px solid currentColor;outline-offset:7px}\n.ds-book-scene{position:relative;width:100%;height:clamp(300px,32vw,450px)}\n.ds-book-scene canvas,.ds-book-fallback{position:absolute;inset:0;width:100%;height:100%;display:block}\n.ds-book-fallback .ds-leaf{fill:var(--white);stroke:var(--blue);stroke-width:2}\n.ds-book-fallback .ds-edge,.ds-book-fallback .ds-ribbon{fill:var(--amber)}\n.ds-book-fallback .ds-spine,.ds-book-fallback .ds-lines path,.ds-book-fallback .ds-threads path{fill:none;stroke:var(--blue);stroke-width:2}\n.ds-book-fallback .ds-nodes circle{fill:var(--pink)}\n@media(max-width:700px){.ds-book-scene{height:300px}}\n@media(prefers-reduced-motion:reduce){.ds-preview *,.ds-preview *::before,.ds-preview *::after{transition:none!important}}"
     }
   ],
   "narrative": {
-    "northStar": "A contemporary book spread",
-    "overview": "A contemporary book spread pairs generous white space with blue editorial type, amber action accents, and small pink annotation marks. The open book and connected leaves give the documentation theme a visible form.\n\nRegular serif display text carries the expressive voice; variable sans supporting text keeps navigation and explanation legible. The interface remains quiet around the book, with essential content and actions in semantic HTML.",
+    "northStar": "Shared pages",
+    "overview": "A bold contemporary editorial spread uses substantial fields of blue, pink, and amber to make shared documentation visible. Regular Geist Serif headlines give the page its voice; white space separates the large statements rather than dominating the opening.\n\nThe blue opening presents a white and amber headline above explanatory copy, a white GitHub action, and an interactive white book. Color then carries the visitor through a pink strip, a white idea statement, pink human and amber agent spreads, a white invitation, and a blue footer.",
     "keyCharacteristics": [
-      "Generous white space and blue editorial type.",
-      "Regular Geist Serif display with Geist sans supporting text.",
-      "Amber action details and pink annotations.",
-      "A decorative open book with a static SVG fallback."
+      "Substantial color coverage with a blue opening and footer.",
+      "Large regular serif statements paired with clear Geist sans text.",
+      "Human and agent perspectives expressed as adjacent colored spreads on desktop.",
+      "A transparent interactive book backed by an inline SVG fallback."
     ],
     "rules": [
       {
         "name": "The Four-Color Rule",
-        "body": "Use the four brand colors in the frontmatter; blue opacity washes are derived treatments, not additional brand colors.",
+        "body": "Keep the four user-selected colors; translucent white borders and 3D lighting are treatments, not additional brand tokens.",
         "section": "colors"
       },
       {
-        "name": "The Regular Display Rule",
-        "body": "Use the shipped Geist Serif Regular at its actual 400 weight; do not synthesize a heavier display face.",
+        "name": "The Large Accent Text Rule",
+        "body": "Use pink/white and blue/amber text pairings only at large-text sizes: at least 24px regular or 20px bold.",
+        "section": "colors"
+      },
+      {
+        "name": "The Regular Serif Rule",
+        "body": "Use Geist Serif Regular at its shipped 400 weight for display, section headings, and the wordmark.",
         "section": "typography"
       },
       {
         "name": "The HTML First Rule",
-        "body": "Keep the headline, explanation, and GitHub action readable and usable without the canvas or JavaScript.",
+        "body": "Keep content and actions in semantic HTML; the decorative book must not gate understanding or navigation.",
         "section": "components"
       }
     ],
     "dos": [
-      "Do preserve the four brand colors and the regular serif display face.",
-      "Do keep text and actions in HTML with visible keyboard focus.",
-      "Do reserve space for the book and retain its static fallback.",
-      "Do honor reduced motion and suspend rendering offscreen or in hidden tabs."
+      "Do preserve the exact palette and substantial blue, pink, and amber surfaces.",
+      "Do keep the serif display regular and the accent-color text at large sizes.",
+      "Do preserve responsive stacking, visible focus, and reduced-motion behavior.",
+      "Do retain the SVG fallback until the first successful WebGL frame."
     ],
     "donts": [
-      "Don't add unverified product features, statistics, or customer claims.",
-      "Don't turn the primary CTA into an amber-filled button.",
-      "Don't use pink or amber for supporting body text.",
-      "Don't gate the page content behind a scroll reveal or WebGL initialization."
+      "Don't restore the sparse white opening or treat color as small accents only.",
+      "Don't add invented features, pricing, customer numbers, or product-ready claims.",
+      "Don't replace the rectangular arrow actions with pill buttons or trailing dots.",
+      "Don't require WebGL or pointer interaction to read the page or reach GitHub."
     ]
   }
 }
